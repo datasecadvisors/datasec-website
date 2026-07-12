@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DataSec Advisors | Cybersecurity Consulting</title>
-    <!-- Inter Font for that modern tech look -->
+    <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,14 +31,13 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            /* Subtle Grid Pattern Overlay */
+            /* Grid Pattern */
             background-image: 
                 linear-gradient(rgba(0, 71, 255, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 71, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
         }
 
-        /* Animated background glow */
         .glow {
             position: fixed;
             top: 0;
@@ -51,19 +50,18 @@
         }
 
         header {
-            padding: 2rem;
+            padding: 2.5rem;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
             letter-spacing: -1px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo i {
@@ -78,6 +76,8 @@
             align-items: center;
             text-align: center;
             padding: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .badge {
@@ -85,82 +85,92 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--accent);
             margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-size: clamp(2.5rem, 7vw, 4rem);
             line-height: 1.1;
             margin-bottom: 1.5rem;
             font-weight: 800;
         }
 
         h1 span {
-            background: linear-gradient(90deg, #fff, var(--primary));
+            color: var(--primary);
+            background: linear-gradient(90deg, #fff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         p.description {
-            max-width: 600px;
-            font-size: 1.1rem;
+            max-width: 800px;
+            font-size: 1.15rem;
             color: #a8b2d1;
             line-height: 1.6;
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
 
-        .services-preview {
+        /* 3-Column Services Layout */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
             width: 100%;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .service-card {
             background: var(--glass);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 35px 25px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
         }
 
         .service-card:hover {
             border-color: var(--primary);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            background: rgba(0, 71, 255, 0.03);
         }
 
         .service-card i {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
-            font-size: 1rem;
-            margin-bottom: 5px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: #8892b0;
+            line-height: 1.5;
         }
 
         .cta-container {
             display: flex;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .btn {
-            padding: 14px 28px;
+            padding: 16px 32px;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             transition: 0.3s;
             cursor: pointer;
+            font-size: 1rem;
         }
 
         .btn-primary {
@@ -170,8 +180,8 @@
         }
 
         .btn-primary:hover {
-            background: #0036cc;
-            box-shadow: 0 0 20px rgba(0, 71, 255, 0.4);
+            box-shadow: 0 0 25px rgba(0, 71, 255, 0.5);
+            transform: scale(1.02);
         }
 
         .btn-outline {
@@ -181,38 +191,28 @@
         }
 
         .btn-outline:hover {
-            border-color: white;
             background: rgba(255, 255, 255, 0.05);
+            border-color: #fff;
         }
 
         footer {
-            padding: 2rem;
+            padding: 3rem;
             text-align: center;
             font-size: 0.9rem;
             color: #64748b;
         }
 
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        /* Mobile Optimization */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.5rem; }
         }
 
-        .social-links a {
-            color: #64748b;
-            font-size: 1.2rem;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Pulse Animation for the badge */
         @keyframes pulse {
             0% { opacity: 1; }
-            50% { opacity: 0.5; }
+            50% { opacity: 0.4; }
             100% { opacity: 1; }
         }
         .dot {
@@ -238,47 +238,44 @@
 
     <main>
         <div class="badge">
-            <span class="dot"></span> Systems Initializing
+            <span class="dot"></span> Platform Launching Soon
         </div>
         
-        <h1>Securing the <span>Future</span> of your Business.</h1>
+        <h1>Expert Defense. <span>Total Resilience.</span></h1>
         
         <p class="description">
-            Advanced cybersecurity consulting, risk assessment, and incident response. We are building a new standard in digital defense.
+            We specialize in Cyber Essentials preparedness to ensure your compliance, maturity assessments to score and roadmap your growth, and resilience exercises to prepare your organization for data breaches.
         </p>
 
-        <div class="services-preview">
+        <div class="services-grid">
+            <!-- Service 1 -->
             <div class="service-card">
-                <i class="fas fa-search-shield"></i>
-                <h3>Risk Audit</h3>
+                <i class="fas fa-certificate"></i>
+                <h3>Cyber Essentials Readiness</h3>
+                <p>Streamlined preparedness and gap analysis to help your organization achieve compliance and official certification.</p>
             </div>
+            <!-- Service 2 -->
             <div class="service-card">
-                <i class="fas fa-lock"></i>
-                <h3>Compliance</h3>
+                <i class="fas fa-chart-line"></i>
+                <h3>Cyber Security Maturity Assessment</h3>
+                <p>Comprehensive scoring of your current security posture with a clear strategic path to increase your operational maturity.</p>
             </div>
+            <!-- Service 3 -->
             <div class="service-card">
-                <i class="fas fa-user-secret"></i>
-                <h3>Pen-Testing</h3>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tower-broadcast"></i>
-                <h3>Response</h3>
+                <i class="fas fa-fire-extinguisher"></i>
+                <h3>Cyber Resilience Exercise</h3>
+                <p>Simulated breach scenarios and stress-testing to ensure your team and infrastructure are ready for real-world incidents.</p>
             </div>
         </div>
 
         <div class="cta-container">
-            <a href="mailto:contact@datasecadvisors.com" class="btn btn-primary">Contact Early Access</a>
-            <a href="#" class="btn btn-outline">Our Methodology</a>
+            <a href="mailto:contact@datasecadvisors.com" class="btn btn-primary">Get In Touch</a>
+            <a href="#services" class="btn btn-outline">Coming Soon</a>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 DataSec Advisors. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-        </div>
     </footer>
 </body>
 </html>
